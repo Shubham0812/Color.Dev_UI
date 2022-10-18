@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Color.Dev_UI
 //
 //  Created by Shubham Singh on 18/10/22.
@@ -7,20 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
+    
+    // MARK: - Variables
+    
+    
+    // MARK: - Views
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+            Color.background
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Hello, world!")
+            }.padding(24)
         }
         .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
