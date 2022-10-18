@@ -5,16 +5,32 @@
 //  Created by Shubham Singh on 18/10/22.
 //
 
-import SwiftUI
+import UIKit
 
-struct FoundationExtension: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension Int {
+    func appendZeros() -> String {
+        if (self < 10) {
+            return "0\(self)"
+        } else {
+            return "\(self)"
+        }
+    }
+    
+    func degreeToRadians() -> CGFloat {
+        return  (CGFloat(self) * .pi) / 180
     }
 }
 
-struct FoundationExtension_Previews: PreviewProvider {
-    static var previews: some View {
-        FoundationExtension()
+extension Double {
+    func convert(fromRange: (Double, Double), toRange: (Double, Double)) -> Double {
+        var value = self
+        value -= fromRange.0
+        value /= Double(fromRange.1 - fromRange.0)
+        value *= toRange.1 - toRange.0
+        value += toRange.0
+        return value
+    }
+    func clean(places: Int) -> String {
+        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(format: "%.\(places)f", self)
     }
 }
