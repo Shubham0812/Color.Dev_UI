@@ -36,8 +36,6 @@ Before working on an issue please **leave a comment** and I'll assign the issue 
 
 * Open the project on GitHub and raise it to the main branch on the repo
 
-### Supporting Files
-
 
 ## Contributing 🤖
 To start contributing, check out [contributing.md](). 
