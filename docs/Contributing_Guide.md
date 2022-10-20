@@ -1,4 +1,4 @@
-# Contributing
+# Contributing Guidelines
 
 ## General
 These are general guidelines when contributing to the project. These guidelines should help contributors understand which branch and how to structure these commits. 
