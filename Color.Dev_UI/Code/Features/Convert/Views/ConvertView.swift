@@ -15,13 +15,16 @@ struct MainView: View {
     // MARK: - Views
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
-            Color.background
+            Color.homeBlue
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Hello, world!")
-            }.padding(24)
+                Text("Color.Dev")
+                    .font(.system(size: 34, weight: .semibold, design: .monospaced))
+                    .tracking(-2)
+                    .foregroundColor(.white)
+            }
+            .padding(24)
         }
-        .padding()
     }
 }
 
