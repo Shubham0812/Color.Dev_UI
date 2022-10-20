@@ -10,8 +10,18 @@
 		518B853128FEBB03000265BA /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B853028FEBB03000265BA /* FoundationExtension.swift */; };
 		518B853328FEBB13000265BA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B853228FEBB13000265BA /* ColorExtension.swift */; };
 		518B853528FEBB22000265BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B853428FEBB22000265BA /* Colors.swift */; };
+		518B853829010FB5000265BA /* ConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B853729010FB5000265BA /* ConvertViewModel.swift */; };
+		518B853A29012082000265BA /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B853929012082000265BA /* FontManager.swift */; };
+		518B854C2901241D000265BA /* Nocturne-Serif-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 518B85482901241D000265BA /* Nocturne-Serif-SemiBold.otf */; };
+		518B854D2901241D000265BA /* Nocturne-Serif-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 518B85492901241D000265BA /* Nocturne-Serif-Bold.otf */; };
+		518B854E2901241D000265BA /* Nocturne-Serif-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 518B854A2901241D000265BA /* Nocturne-Serif-Medium.otf */; };
+		518B854F2901241D000265BA /* Nocturne-Serif-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 518B854B2901241D000265BA /* Nocturne-Serif-Regular.otf */; };
+		518B856429012ECD000265BA /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518B856029012ECD000265BA /* Ubuntu-Regular.ttf */; };
+		518B856529012ECD000265BA /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518B856129012ECD000265BA /* Ubuntu-Bold.ttf */; };
+		518B856629012ECD000265BA /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518B856229012ECD000265BA /* Ubuntu-Medium.ttf */; };
+		518B856729012ECD000265BA /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 518B856329012ECD000265BA /* Ubuntu-Light.ttf */; };
 		5192ADC928FEAF2E00A2D3EC /* Color_Dev_UIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192ADC828FEAF2E00A2D3EC /* Color_Dev_UIApp.swift */; };
-		5192ADCB28FEAF2E00A2D3EC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192ADCA28FEAF2E00A2D3EC /* MainView.swift */; };
+		5192ADCB28FEAF2E00A2D3EC /* ConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192ADCA28FEAF2E00A2D3EC /* ConvertView.swift */; };
 		5192ADCD28FEAF2E00A2D3EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5192ADCC28FEAF2E00A2D3EC /* Assets.xcassets */; };
 		5192ADD028FEAF2E00A2D3EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5192ADCF28FEAF2E00A2D3EC /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -21,9 +31,19 @@
 		518B853028FEBB03000265BA /* FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
 		518B853228FEBB13000265BA /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		518B853428FEBB22000265BA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		518B853729010FB5000265BA /* ConvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewModel.swift; sourceTree = "<group>"; };
+		518B853929012082000265BA /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		518B85482901241D000265BA /* Nocturne-Serif-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nocturne-Serif-SemiBold.otf"; sourceTree = "<group>"; };
+		518B85492901241D000265BA /* Nocturne-Serif-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nocturne-Serif-Bold.otf"; sourceTree = "<group>"; };
+		518B854A2901241D000265BA /* Nocturne-Serif-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nocturne-Serif-Medium.otf"; sourceTree = "<group>"; };
+		518B854B2901241D000265BA /* Nocturne-Serif-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nocturne-Serif-Regular.otf"; sourceTree = "<group>"; };
+		518B856029012ECD000265BA /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		518B856129012ECD000265BA /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		518B856229012ECD000265BA /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		518B856329012ECD000265BA /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		5192ADC528FEAF2E00A2D3EC /* Color.Dev_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Color.Dev_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5192ADC828FEAF2E00A2D3EC /* Color_Dev_UIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Dev_UIApp.swift; sourceTree = "<group>"; };
-		5192ADCA28FEAF2E00A2D3EC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5192ADCA28FEAF2E00A2D3EC /* ConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertView.swift; sourceTree = "<group>"; };
 		5192ADCC28FEAF2E00A2D3EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5192ADCF28FEAF2E00A2D3EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +82,8 @@
 		518B852528FEBA2A000265BA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				518B85472901214D000265BA /* Nocturne */,
+				518B853629010F4D000265BA /* Ubuntu */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -69,12 +91,12 @@
 		518B852628FEBA58000265BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				518B852728FEBA5C000265BA /* Main */,
+				518B852728FEBA5C000265BA /* Convert */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		518B852728FEBA5C000265BA /* Main */ = {
+		518B852728FEBA5C000265BA /* Convert */ = {
 			isa = PBXGroup;
 			children = (
 				518B852828FEBA62000265BA /* Models */,
@@ -83,7 +105,7 @@
 				518B852928FEBA66000265BA /* Services */,
 				518B852C28FEBA74000265BA /* Views */,
 			);
-			path = Main;
+			path = Convert;
 			sourceTree = "<group>";
 		};
 		518B852828FEBA62000265BA /* Models */ = {
@@ -96,6 +118,7 @@
 		518B852928FEBA66000265BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				518B853729010FB5000265BA /* ConvertViewModel.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -117,7 +140,7 @@
 		518B852C28FEBA74000265BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5192ADCA28FEAF2E00A2D3EC /* MainView.swift */,
+				5192ADCA28FEAF2E00A2D3EC /* ConvertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,8 +166,31 @@
 			isa = PBXGroup;
 			children = (
 				518B853428FEBB22000265BA /* Colors.swift */,
+				518B853929012082000265BA /* FontManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		518B853629010F4D000265BA /* Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				518B856129012ECD000265BA /* Ubuntu-Bold.ttf */,
+				518B856329012ECD000265BA /* Ubuntu-Light.ttf */,
+				518B856229012ECD000265BA /* Ubuntu-Medium.ttf */,
+				518B856029012ECD000265BA /* Ubuntu-Regular.ttf */,
+			);
+			path = Ubuntu;
+			sourceTree = "<group>";
+		};
+		518B85472901214D000265BA /* Nocturne */ = {
+			isa = PBXGroup;
+			children = (
+				518B85492901241D000265BA /* Nocturne-Serif-Bold.otf */,
+				518B854A2901241D000265BA /* Nocturne-Serif-Medium.otf */,
+				518B854B2901241D000265BA /* Nocturne-Serif-Regular.otf */,
+				518B85482901241D000265BA /* Nocturne-Serif-SemiBold.otf */,
+			);
+			path = Nocturne;
 			sourceTree = "<group>";
 		};
 		5192ADBC28FEAF2E00A2D3EC = {
@@ -240,8 +286,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518B854F2901241D000265BA /* Nocturne-Serif-Regular.otf in Resources */,
+				518B854D2901241D000265BA /* Nocturne-Serif-Bold.otf in Resources */,
+				518B856729012ECD000265BA /* Ubuntu-Light.ttf in Resources */,
+				518B856629012ECD000265BA /* Ubuntu-Medium.ttf in Resources */,
 				5192ADD028FEAF2E00A2D3EC /* Preview Assets.xcassets in Resources */,
+				518B854E2901241D000265BA /* Nocturne-Serif-Medium.otf in Resources */,
+				518B856529012ECD000265BA /* Ubuntu-Bold.ttf in Resources */,
 				5192ADCD28FEAF2E00A2D3EC /* Assets.xcassets in Resources */,
+				518B856429012ECD000265BA /* Ubuntu-Regular.ttf in Resources */,
+				518B854C2901241D000265BA /* Nocturne-Serif-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,11 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5192ADCB28FEAF2E00A2D3EC /* MainView.swift in Sources */,
+				5192ADCB28FEAF2E00A2D3EC /* ConvertView.swift in Sources */,
 				518B853528FEBB22000265BA /* Colors.swift in Sources */,
+				518B853A29012082000265BA /* FontManager.swift in Sources */,
 				518B853128FEBB03000265BA /* FoundationExtension.swift in Sources */,
 				5192ADC928FEAF2E00A2D3EC /* Color_Dev_UIApp.swift in Sources */,
 				518B853328FEBB13000265BA /* ColorExtension.swift in Sources */,
+				518B853829010FB5000265BA /* ConvertViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
