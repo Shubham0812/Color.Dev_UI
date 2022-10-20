@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct MainViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class ConvertViewModel: ObservableObject {
+    
+    // MARK:- variables
+    @Published var hexField: String = ""
+    @Published var rgbField: String = ""
+    
+    // MARK:- inits
+    init() {
     }
-}
-
-struct MainViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        MainViewModel()
-    }
+    
+    
+    // MARK:- functions
+   
+    
 }
