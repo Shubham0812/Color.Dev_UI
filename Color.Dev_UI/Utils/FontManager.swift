@@ -7,14 +7,44 @@
 
 import SwiftUI
 
-struct FontManager: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+enum TypefaceOne {
+    case regular
+    case medium
+    case semibold
+    case bold
+    
+    func font(size: CGFloat) -> Font {
+        switch self {
+        case .regular:
+            return .custom("Ubuntu-Light", size: size)
+        case .medium:
+            return .custom("Ubuntu-Regular", size: size)
+        case .semibold:
+            return .custom("Ubuntu-Medium", size: size)
+        case .bold:
+            return .custom("Ubuntu-Bold", size: size)
+            
+        }
     }
 }
 
-struct FontManager_Previews: PreviewProvider {
-    static var previews: some View {
-        FontManager()
+enum TypefaceTwo {
+    case regular
+    case medium
+    case semibold
+    case bold
+    
+    func font(size: CGFloat) -> Font {
+        switch self {
+        case .regular:
+            return .custom("NocturneSerif-Regular", size: size)
+        case .medium:
+            return .custom("NocturneSerif-Medium", size: size)
+        case .semibold:
+            return .custom("NocturneSerif-SemiBold", size: size)
+        case .bold:
+            return .custom("NocturneSerif-Bold", size: size)
+            
+        }
     }
 }
