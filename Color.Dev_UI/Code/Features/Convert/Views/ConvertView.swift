@@ -118,14 +118,13 @@ struct ConvertView: View {
                                 Text("Save")
                                     .font(TypefaceTwo.semibold.font(size: 24))
                             }
-                            .padding(5)
+                            .padding(7)
                             .padding(.horizontal, 14)
                             .background(
                                 RoundedRectangle(cornerRadius: 4)
                                     .stroke(style: StrokeStyle(lineWidth: 2))
-                                    .foregroundColor(.background)
-                                    .blur(radius: 1)
-                                    .colorMultiply(convertViewModel.contrastChangeNeeded ? .label : .background)
+                                    .foregroundColor(convertViewModel.backgroundColor)
+                                    .contrast(0.5)
                                     .opacity(convertViewModel.validColor ? 1 : 0.1)
                             )
                             .buttonStyle(.plain)
