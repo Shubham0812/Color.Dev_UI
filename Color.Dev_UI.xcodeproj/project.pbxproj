@@ -150,9 +150,17 @@
 			path = "Shared Services";
 			sourceTree = "<group>";
 		};
+		512F3BFC290332BA00B22EE3 /* Snaps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Snaps;
+			sourceTree = "<group>";
+		};
 		518B852228FEBA15000265BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				512F3BFC290332BA00B22EE3 /* Snaps */,
 				518B852528FEBA2A000265BA /* Fonts */,
 				518B852428FEBA26000265BA /* Color-Dev-UI-Info.plist */,
 				5192ADCC28FEAF2E00A2D3EC /* Assets.xcassets */,
