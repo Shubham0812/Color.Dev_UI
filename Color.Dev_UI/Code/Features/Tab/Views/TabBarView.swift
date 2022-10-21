@@ -11,7 +11,6 @@ struct TabBarView: View {
     
     // MARK:- variables
     @EnvironmentObject var tabState: TabState
-    @EnvironmentObject var convertViewModel: ConvertViewModel
     
     let animation: Animation = Animation.spring(response: 0.4, dampingFraction: 0.8, blendDuration: 0)
         .speed(0.5).delay(0.2)
@@ -39,7 +38,6 @@ struct TabBarView: View {
                 }
                 .buttonStyle(.plain)
                 .opacity(self.tabState.selectedTab == 0 ? 1 : 0.55)
-                .colorMultiply(convertViewModel.contrastChangeNeeded ? .background : .label)
                 .animation(.easeIn(duration: 0.25), value: self.tabState.selectedTab)
                 .frame(width: 58)
                 
@@ -60,7 +58,6 @@ struct TabBarView: View {
                 }
                 .buttonStyle(.plain)
                 .opacity(self.tabState.selectedTab == 1 ? 1 : 0.55)
-                .colorMultiply(convertViewModel.contrastChangeNeeded ? .background : .label)
                 .animation(.easeIn(duration: 0.25), value: self.tabState.selectedTab)
                 .frame(width: 58)
                 Spacer()
@@ -78,7 +75,6 @@ struct TabBarView_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             TabBarView()
                 .environmentObject(TabState())
-                .environmentObject(ConvertViewModel())
         }
     }
 }

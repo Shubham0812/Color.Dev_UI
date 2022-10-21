@@ -79,16 +79,7 @@ struct ConvertView: View {
                             Image("bucket")
                                 .resizable()
                                 .frame(width: 28, height: 28)
-                            TextField("rgb", text: $convertViewModel.rgbField, onEditingChanged: { editingChanged in
-                                guard editingChanged else { self.convertViewModel.rgbFocused = false; return }
-                                self.convertViewModel.rgbFocused = true
-                            })
-                            .onChange(of: convertViewModel.rgbField, perform: { newValue in
-                                if let lastChar = newValue.last {
-                                    let newCharString = String(lastChar)
-                                    convertViewModel.rgbFieldChanged(newValue: newCharString, focused: focusedField == .rgb)
-                                }
-                            })
+                            TextField("rgb", text: $convertViewModel.rgbField)
                             .textCase(.lowercase)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
@@ -149,7 +140,6 @@ struct ConvertView: View {
                     .padding(.horizontal, 34)
                     .padding(.bottom, height * 0.15)
                 }
-                .colorMultiply(convertViewModel.contrastChangeNeeded ? .background : .label) 
                 .padding(24)
             }
         }
