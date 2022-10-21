@@ -143,6 +143,7 @@ struct ConvertView: View {
                 .padding(24)
             }
         }
+        .ignoresSafeArea(.keyboard, edges: .vertical)
         .onAppear() {
             withAnimation(.default) {
                 self.focusedField = .hex
