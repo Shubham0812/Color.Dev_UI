@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct TabbedView: View {
+    
+    // MARK:- variables
+    @StateObject var tabState: TabState = TabState(selectedTab: 0)
+    @StateObject var convertViewModel: ConvertViewModel = ConvertViewModel()
+
+    let tabAnimationDuration: TimeInterval = 0.22
+    
+    // MARK:- views
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+            ZStack {
+                ConvertView()
+                    .environmentObject(convertViewModel)
+            }
+            .opacity(self.tabState.selectedTab == 0 ? 1 : 0)
+          
+            ZStack {
+                SavedView()
+            }
+            .opacity(self.tabState.selectedTab == 1 ? 1 : 0)
+            
+            
+            GeometryReader { geometry in
+                VStack {
+                    Spacer()
+                    TabBarView()
+                        .environmentObject(convertViewModel)
+                        .environmentObject(tabState)
+//                        .padding(.bottom, 4)
+                        .zIndex(5)
+                    
+                }
+            }
+        }
+        .ignoresSafeArea(.keyboard)
     }
 }
 
@@ -18,3 +53,18 @@ struct TabbedView_Previews: PreviewProvider {
         TabbedView()
     }
 }
+
+
+class TabState: ObservableObject {
+    @Published var selectedTab: Int
+    
+    init(selectedTab: Int  = 0) {
+        self.selectedTab = selectedTab
+    }
+}
+
+
+
+
+
+

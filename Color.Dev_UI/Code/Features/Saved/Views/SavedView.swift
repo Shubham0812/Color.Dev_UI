@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct SavedView: View {
+    
+    // MARK: - Variables
+    
+    
+    // MARK: - Views
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                
+                RoundedRectangle(cornerRadius: 44)
+                    .stroke(style: StrokeStyle(lineWidth: 1.5, lineCap: .round, lineJoin: .round))
+                    .opacity(0.3)
+                    .rotationEffect(.degrees(240))
+                VStack(alignment: .leading) {
+                    Text("Color.Dev")
+                        .font(TypefaceTwo.bold.font(size: 34))
+                }
+                .padding(24)
+            }
+            ZStack {
+                Text("Saved Colors")
+                    .font(TypefaceTwo.medium.font(size: 24))
+            }
+        }
     }
 }
 
