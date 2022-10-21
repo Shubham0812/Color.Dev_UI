@@ -7,6 +7,12 @@ Color Converter &amp; Scheme Generator Application using the SwiftUI Framework �
 
 Like the project? Just give it a star ⭐️ and spread the word!
 
+## What's new?
+- Add TabbedView and TabBarView
+- Add Base UI For Color Convert
+- Add Base for Saved Color
+
+<img src = "https://raw.githubusercontent.com/Shubham0812/Color.Dev_UI/main/Color.Dev_UI/Resources/Snaps/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-10-22%20at%2001.33.53.png">
 
 ## Who Can Contribute? 👩🏽‍💻
 * Anyone of all skill levels can contribute to this repo
