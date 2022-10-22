@@ -38,4 +38,3 @@ struct ImageView_Previews: PreviewProvider {
     }
 }
 
-
