@@ -76,7 +76,7 @@ struct ConvertView: View {
                             Image("bucket")
                                 .resizable()
                                 .frame(width: 28, height: 28)
-                            TextField("rgb", text: $convertViewModel.rgbField)
+                            ValidatedTextField("rgb", value: $convertViewModel.rgbField, formatter: convertViewModel.rgbFormatter)
                             .textCase(.lowercase)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
@@ -145,6 +145,10 @@ struct ConvertView: View {
             withAnimation(.default) {
                 self.focusedField = .hex
             }
+        }
+        .onChange(of: focusedField) { newValue in
+            self.convertViewModel.rgbFocused = newValue == .rgb
+            self.convertViewModel.hexFocused = newValue == .hex
         }
     }
 }

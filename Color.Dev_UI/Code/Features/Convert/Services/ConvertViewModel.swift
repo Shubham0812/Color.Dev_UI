@@ -18,27 +18,44 @@ class ConvertViewModel: ObservableObject {
     
     @Published var backgroundColor: Color = .homeBlue
     @Published var rgbFocused = false
+    @Published var hexFocused = true
     
     @Published var enableClearButton = false
         
     let contrastDuration: TimeInterval = 0.35
     
     let hexFormatter = HexFormatter()
+    let rgbFormatter = RGBFormatter()
     var cancellable = Set<AnyCancellable>()
     
     // MARK: - Inits
     init() {
         setUpHexFieldChangeObservation()
+        setUpRgbFieldChangeObservation()
     }
     
     func setUpHexFieldChangeObservation() {
         _hexField.projectedValue.sink { newValue in
             self.validColor = newValue.count == 6
-            self.enableClearButton = !newValue.isEmpty
+            self.updateClearButtonStatus()
+            guard self.hexFocused else { return }
             self.setCurrentHexColor()
+        }.store(in: &cancellable)
+        
+    }
+    
+    func setUpRgbFieldChangeObservation() {
+        _rgbField.projectedValue.sink { newValue in
+            self.validColor = self.rgbFormatter.isValidRGBA(newValue)
+            self.updateClearButtonStatus()
+            guard self.rgbFocused else { return }
+            self.setCurrentRGBAColor()
         }.store(in: &cancellable)
     }
     
+    func updateClearButtonStatus() {
+        self.enableClearButton = !hexField.isEmpty || !rgbField.isEmpty
+    }
     
     func setCurrentHexColor() {
         guard hexField.count == 6 else {
@@ -56,12 +73,37 @@ class ConvertViewModel: ObservableObject {
         setRGBAText(withRGBA: rgba)
     }
     
+    func setCurrentRGBAColor() {
+        guard !rgbField.isEmpty,
+              let uiColor = rgbFormatter.uiColor(forString: rgbField)
+        else {
+            resetBackgroundColor()
+            resetHexText()
+            return
+        }
+        let color = Color(uiColor: uiColor)
+        withAnimation {
+            self.backgroundColor = color
+        }
+        
+        let hexCode = uiColor.getHex()
+        setHexText(withHex: hexCode)
+    }
+    
     func setRGBAText(withRGBA rgba: RGBA) {
         self.rgbField = "rgb(\(Int(rgba.red * 255)),\(Int(rgba.green * 255)),\(Int(rgba.blue * 255)))"
     }
     
     func resetRGBAText() {
         self.rgbField = ""
+    }
+    
+    func setHexText(withHex hex: String) {
+        self.hexField = hex
+    }
+    
+    func resetHexText() {
+        self.hexField = ""
     }
 
     func saveColor() {
