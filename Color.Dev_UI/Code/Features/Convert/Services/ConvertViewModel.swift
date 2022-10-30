@@ -35,12 +35,12 @@ class ConvertViewModel: ObservableObject {
         _hexField.projectedValue.sink { newValue in
             self.validColor = newValue.count == 6
             self.enableClearButton = !newValue.isEmpty
-            self.setCurrentHextColor()
+            self.setCurrentHexColor()
         }.store(in: &cancellable)
     }
     
     
-    func setCurrentHextColor() {
+    func setCurrentHexColor() {
         guard hexField.count == 6 else {
             resetBackgroundColor()
             resetRGBAText()
