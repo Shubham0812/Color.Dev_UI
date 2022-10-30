@@ -20,10 +20,7 @@ class ConvertViewModel: ObservableObject {
     @Published var rgbFocused = false
     
     @Published var enableClearButton = false
-    
-    let acceptedHex = "abcdefABCDEF0123456789"
-    let acceptedRgb = "(),0123456789rgbRGB"
-    
+        
     let contrastDuration: TimeInterval = 0.35
     
     let hexFormatter = HexFormatter()
