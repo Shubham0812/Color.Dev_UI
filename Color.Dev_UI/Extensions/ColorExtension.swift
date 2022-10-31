@@ -21,6 +21,7 @@ extension Color {
 typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
 
 extension UIColor {
+    
     static func getRGBA(forHex hex: String) -> RGBA {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
@@ -46,6 +47,27 @@ extension UIColor {
             a = CGFloat(rgb & 0x000000FF) / 255.0
         }
         return (red: r, green: g, blue: b, alpha: a)
+    }
+    
+    func getHex() -> String {
+        let colorRef = cgColor.components
+        let r = colorRef?[0] ?? 0
+        let g = colorRef?[1] ?? 0
+        let b = ((colorRef?.count ?? 0) > 2 ? colorRef?[2] : g) ?? 0
+        let a = cgColor.alpha
+        
+        var color = String(
+            format: "%02lX%02lX%02lX",
+            lroundf(Float(r * 255)),
+            lroundf(Float(g * 255)),
+            lroundf(Float(b * 255))
+        )
+        
+        if a < 1 {
+            color += String(format: "%02lX", lroundf(Float(a)))
+        }
+        
+        return color
     }
     
     /// For converting Hex-based colors
