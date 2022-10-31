@@ -46,14 +46,11 @@ struct ConvertView: View {
                             Image("hash")
                                 .resizable()
                                 .frame(width: 26, height: 26)
-                            
-                            TextField("hex", text: $convertViewModel.hexField)
-                                .onChange(of: convertViewModel.hexField, perform: { newValue in
-                                    if let lastChar = newValue.last {
-                                        let newCharString = String(lastChar)
-                                        convertViewModel.hexFieldChanged(newValue: newCharString)
-                                    }
-                                })
+                            ValidatedTextField(
+                                "hex",
+                                value: $convertViewModel.hexField,
+                                formatter: convertViewModel.hexFormatter
+                            )
                                 .textCase(.lowercase)
                                 .autocapitalization(.none)
                                 .disableAutocorrection(true)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class ConvertViewModel: ObservableObject {
     
@@ -19,39 +20,48 @@ class ConvertViewModel: ObservableObject {
     @Published var rgbFocused = false
     
     @Published var enableClearButton = false
-    
-    let acceptedHex = "abcdefABCDEF0123456789"
-    let acceptedRgb = "(),0123456789rgbRGB"
-    
+        
     let contrastDuration: TimeInterval = 0.35
+    
+    let hexFormatter = HexFormatter()
+    var cancellable = Set<AnyCancellable>()
     
     // MARK: - Inits
     init() {
-        
+        setUpHexFieldChangeObservation()
     }
     
-    // MARK: - Functions
-    
-    // Detects a change in the HEX Text Field
-    // Validate if it's a proper HEX
-    // Call the function to Convert it into RGB
-    /// don't forget to set the `backGroundColor` property as well to change the color of the View
-    func hexFieldChanged(newValue: String) {
-        guard hexField.count > 0 else { enableClearButton = false; return }
-        guard acceptedHex.contains(newValue) else {
-            hexField.removeLast()
-            return
-        }
-        
-        guard hexField.count <= 6 else {
-            hexField.removeLast()
-            return
-        }
+    func setUpHexFieldChangeObservation() {
+        _hexField.projectedValue.sink { newValue in
+            self.validColor = newValue.count == 6
+            self.enableClearButton = !newValue.isEmpty
+            self.setCurrentHexColor()
+        }.store(in: &cancellable)
     }
     
-    // write the Code to Generate RGB
-    func generateRGB(rgbValue:UInt32) {
-       
+    
+    func setCurrentHexColor() {
+        guard hexField.count == 6 else {
+            resetBackgroundColor()
+            resetRGBAText()
+            return
+        }
+                
+        let rgba = UIColor.getRGBA(forHex: hexField)
+        let uiColor = UIColor(rgba: rgba)
+        let color = Color(uiColor: uiColor)
+        withAnimation(.spring()) {
+            self.backgroundColor = color
+        }
+        setRGBAText(withRGBA: rgba)
+    }
+    
+    func setRGBAText(withRGBA rgba: RGBA) {
+        self.rgbField = "rgb(\(Int(rgba.red * 255)),\(Int(rgba.green * 255)),\(Int(rgba.blue * 255)))"
+    }
+    
+    func resetRGBAText() {
+        self.rgbField = ""
     }
 
     func saveColor() {

@@ -18,9 +18,10 @@ extension Color {
     }
 }
 
+typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
 extension UIColor {
-    /// For converting Hex-based colors
-    convenience init(hex: String) {
+    static func getRGBA(forHex hex: String) -> RGBA {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
         var rgb: UInt64 = 0
@@ -44,7 +45,17 @@ extension UIColor {
             b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
             a = CGFloat(rgb & 0x000000FF) / 255.0
         }
-        self.init(red: r, green: g, blue: b, alpha: a)
+        return (red: r, green: g, blue: b, alpha: a)
+    }
+    
+    /// For converting Hex-based colors
+    convenience init(hex: String) {
+        let rgba = Self.getRGBA(forHex: hex)
+        self.init(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha)
+    }
+    
+    convenience init(rgba: RGBA) {
+        self.init(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: rgba.alpha)
     }
     
     static func fromHex(rgbValue:UInt32, alpha:Double=1.0) -> UIColor {
